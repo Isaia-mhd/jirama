@@ -28,7 +28,7 @@
                     <li><a href="{{ route('home') }}"
                             class="hover:text-amber-400 text-white transition duration-150 ease-in-out">Home</a>
                     </li>
-                    <li><a href=""
+                    <li><a href="{{ route("clients") }}"
                             class="hover:text-amber-400 text-white transition duration-150 ease-in-out">Clients</a>
                     </li>
 
@@ -49,7 +49,7 @@
     </section>
 
     {{-- FOOTER --}}
-    <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-[400px] absolute bottom-0">
+    <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center">
         <p class="text-white font-light text-sm ">copyright&copy; {{ date('Y') }} Developped by Isaia Mohamed
         </p>
     </footer>
