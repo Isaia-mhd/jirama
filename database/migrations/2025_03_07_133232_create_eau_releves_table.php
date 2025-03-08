@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('eau_releves', function (Blueprint $table) {
             $table->id();
-            $table->string("code_eau");
             $table->foreignId("compteur_id");
             $table->integer("valeur")->default(1);
             $table->date("date_releve");

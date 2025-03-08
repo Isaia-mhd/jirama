@@ -32,8 +32,8 @@
                             class="hover:text-amber-400 text-white transition duration-150 ease-in-out">Clients</a>
                     </li>
 
-                    <li><a href=""
-                            class=" text-white transition duration-150 ease-in-out bg-blue-500 py-[5px] px-4 !rounded-md hover:bg-blue-700">Connexion</a>
+                    <li><a href="{{ route("releve.list") }}"
+                            class=" text-white transition duration-150 ease-in-out bg-blue-500 py-[5px] px-4 !rounded-md hover:bg-blue-700">Relevés d'Eau</a>
                     </li>
 
                 </ul>

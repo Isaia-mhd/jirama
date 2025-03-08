@@ -66,9 +66,9 @@
                                     </form>
                                 </td>
 
-                                {{-- releve --}}
+                                {{-- new releve --}}
                                 <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a
-                                        href="{{ route('clients.compteurs', $client->id) }}"
+                                        href="{{ route('releve.new', $elec->code_compteur) }}"
                                         class="bg-blue-500 py-1 px-2 rounded-sm text-white">Nouveau Releve</a></td>
 
 
@@ -126,9 +126,9 @@
                                     </form>
                                 </td>
 
-                                {{-- releve --}}
+                                {{-- new releve --}}
                                 <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a
-                                        href="{{ route('clients.compteurs', $client->id) }}"
+                                        href="{{ route('releve.new', $eau->code_compteur) }}"
                                         class="bg-blue-500 py-1 px-2 rounded-sm text-white">Nouveau Releve</a></td>
 
 
