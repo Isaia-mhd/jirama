@@ -24,8 +24,7 @@ Route::put("/clients/edit/{client}", [ClientController::class, "update"])->name(
 Route::get("/clients/{client}/compteurs", [CompteurController::class, "listCompteur"])->name("clients.compteurs");
 Route::post("/clients/{client}/compteurs/new", [CompteurController::class, "newCompteur"])->name("clients.compteurs.new");
 Route::delete("/clients/compteurs/delete/{compteur}", [CompteurController::class, "destroy"])->name("clients.compteurs.delete");
-Route::get("/clients/compteurs/edit/{compteur}", [CompteurController::class, "edit"])->name("clients.compteurs.edit");
-// Route::put("/clients/compteurs/edit/{compteur}", [CompteurController::class, "update"])->name("clients.compteurs.update");
+Route::put("/clients/compteurs/edit/{compteur}", [CompteurController::class, "update"])->name("clients.compteurs.update");
 
 
 

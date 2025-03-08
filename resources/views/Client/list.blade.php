@@ -65,6 +65,9 @@
 
                 </tbody>
             </table>
+            @if (count($clients) == 0)
+                    <p class="text-gray-400 text-center mt-6">Aucun Client</p>
+            @endif
             {{-- <div class="w-full max-w-[90%] mx-auto mt-3">{{ $baskets->links('pagination::tailwind') }}</div> --}}
 
 

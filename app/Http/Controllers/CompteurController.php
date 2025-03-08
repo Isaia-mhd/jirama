@@ -10,6 +10,8 @@ use Illuminate\Support\Carbon;
 
 class CompteurController extends Controller
 {
+
+    // List Compteur of the user
     public function listCompteur(User $client ){
 
         $types = Type::all();
@@ -18,6 +20,8 @@ class CompteurController extends Controller
         return view("Compteur.list", compact("client", "types", "eaux", "electricites"));
     }
 
+
+    // Creer new Compteur
     public function newCompteur($client){
         $validated = request()->validate([
             "type" => "required|string",
@@ -43,24 +47,29 @@ class CompteurController extends Controller
         return redirect()->back()->with("success", "Nouveau Compteur Crée avec succès !");
     }
 
+
+    // delete Compteur
     public function destroy(Compteur $compteur){
         $compteur->delete();
         return redirect()->back()->with("success", "Compteur Supprimé avec succès !");
     }
 
-    public function edit(Compteur $compteur)
+    // MAJ Compteur
+    public function update(Compteur $compteur)
     {
-        return view("Compteur.edit", compact("compteur"));
-    }
-    // public function update(Compteur $compteur)
-    // {
-    //     $validated = request()->validate([
-    //         "pu" => "required|integer"
-    //     ]);
+        $validated = request()->validate([
+            "pu" => "required|integer"
+        ]);
 
-    //     $compteur->update([
-    //         "pu" => $validated["pu"]
-    //     ]);
-    //     return redirect()->route("clients.compteurs")->with("success", "Compteur modifié avec succès !");
-    // }
+        if($validated["pu"] == $compteur->pu)
+        {
+            return redirect()->back()->with("success", "");
+        }
+        $compteur->update([
+            "pu" => $validated["pu"]
+        ]);
+
+
+        return redirect()->back()->with("success", "Compteur modifié avec succès !");
+    }
 }
