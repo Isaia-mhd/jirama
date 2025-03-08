@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             QuartierSeeder::class,
             SexeSeeder::class,
-            NiveauSeeder::class
+            NiveauSeeder::class,
+            TypeSeeder::class
         ]);
     }
 }

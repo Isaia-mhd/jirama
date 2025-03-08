@@ -49,7 +49,7 @@
     </section>
 
     {{-- FOOTER --}}
-    <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center">
+    <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-6">
         <p class="text-white font-light text-sm ">copyright&copy; {{ date('Y') }} Developped by Isaia Mohamed
         </p>
     </footer>
