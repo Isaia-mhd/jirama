@@ -16,7 +16,7 @@ Liste de Releve
                     <tr class="text-sm text-gray-500 ">
                         <th>Client</th>
                         <th>N° Compteur</th>
-                        <th>Net à Payer</th>
+                        <th>Valeur</th>
                         <th>Date de Releve</th>
                         <th>Date de Presentation</th>
                         <th>Date Limite de Paiement</th>

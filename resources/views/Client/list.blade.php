@@ -25,8 +25,8 @@
                         <th>Quartier</th>
                         <th>Niveau</th>
                         <th>Email</th>
-                        <th>Deleting</th>
                         <th>Editing</th>
+                        <th>Deleting</th>
                         <th>Compteur</th>
                     </tr>
                 </thead>
@@ -72,5 +72,6 @@
 
 
         </div>
+
     </div>
 @endsection

@@ -47,7 +47,7 @@
                                         <input type="number" name="pu" value="{{ $elec->pu }}"
                                             class="bg-slate-900 w-[100px]">
                                         <button type="submit"><i
-                                                class="fa-solid fa-pen text-green-500 text-md"></i></button>
+                                                class="fa-solid fa-save text-green-500 text-md"></i></button>
                                     </form>
                                 </td>
 
@@ -109,7 +109,7 @@
                                         <input type="number" name="pu" value="{{ $eau->pu }}"
                                             class="bg-slate-900 w-[100px]">
                                         <button type="submit"><i
-                                                class="fa-solid fa-pen text-green-500 text-md"></i></button>
+                                                class="fa-solid fa-save text-green-500 text-md"></i></button>
                                     </form>
                                 </td>
                                 <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $eau->created_at }}
