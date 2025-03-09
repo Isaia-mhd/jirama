@@ -5,7 +5,7 @@ Liste de Releve
 
 @section("content")
     <div class="w-full">
-        <h1 class="text-white text-2xl text-center mb-3">Liste de Releves d'Eau</h1>
+        <h1 class="text-white text-2xl text-center mb-3">Liste de Releves d'Elec</h1>
 
         <div class="text-white mt-6">
             <p>
@@ -39,12 +39,12 @@ Liste de Releve
 
                             {{-- editing --}}
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">
-                                <a href="{{ route("releve.edit", $releve->id) }}"><i
+                                <a href="{{ route("relevelec.edit", $releve->id) }}"><i
                                         class="fa-solid fa-pen text-green-500 text-md"></i></a>
                             </td>
                             {{-- deleting --}}
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">
-                                <form action="{{ route("releve.delete", $releve->id) }}" method="post">
+                                <form action="{{ route("relevelec.delete", $releve->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit"

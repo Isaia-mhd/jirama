@@ -16,6 +16,7 @@ class ClientController extends Controller
     public function listClient()
     {
         $clients = User::orderBy("created_at", "DESC")->get();
+
         return view("Client.list", compact("clients"));
     }
 
@@ -60,7 +61,7 @@ class ClientController extends Controller
             "quartier" => $validated["quartier"],
             "niveau" => $validated["niveau"],
             "email" => $validated["email"]
-        ]);
+        ]); 
 
         return redirect()->route("clients")->with("success", "Nouveau Client Ajouté !");
     }

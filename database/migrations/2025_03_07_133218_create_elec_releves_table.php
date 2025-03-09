@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('elec_releves', function (Blueprint $table) {
             $table->id();
-            $table->string("code_elec");
-            $table->foreignId("compteur_id");
+            $table->foreignId("compteur_id")->constrained()->cascadeOnDelete();
             $table->integer("valeur")->default(1);
             $table->date("date_releve");
             $table->date("date_presentation");

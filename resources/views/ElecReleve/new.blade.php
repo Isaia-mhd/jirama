@@ -5,10 +5,10 @@
 
 @section('content')
     <div class="w-full mb-[100px]">
-        <h1 class="text-white text-2xl text-center">Releve d'Eau</h1>
+        <h1 class="text-white text-2xl text-center">Releve d'Electricite</h1>
 
         {{-- Field --}}
-        <form action="{{ route("releve.new.store", $compteur->id) }}" method="post"
+        <form action="{{ route("relevelec.new.store", $compteur->id) }}" method="post"
             class="w-full mt-6 py-7 rounded-lg shadow-md max-w-[50%]  mx-auto flex flex-col gap-5 items-center justify-center">
             @csrf
 
@@ -16,7 +16,7 @@
             <div class="flex flex-col gap-1 w-full">
                 <label for="ncompteur" class="text-sm text-white font-semibold">N° Compteur</label>
                 <input class="bg-slate-900 text-white rounded py-2 px-2 outline-2 focus:outline focus:outline-blue-400"
-                    type="text" name="nom" id="ncompteur" value="{{ $compteur->code_compteur }}" disabled>
+                    type="text" id="ncompteur" value="{{ $compteur->code_compteur }}" disabled>
 
 
                 @error('code_compteur')

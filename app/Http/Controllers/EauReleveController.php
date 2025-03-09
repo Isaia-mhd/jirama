@@ -39,7 +39,7 @@ class EauReleveController extends Controller
             "date_limite" => $validated["date_limite"]
         ]);
 
-        return redirect()->route("releve.list")->with("success", "Nouveau Releve Crée !");
+        return redirect()->route("releve.list")->with("success", "Nouveau Relevé Crée !");
     }
 
     public function destroy(EauReleve $eauReleve){

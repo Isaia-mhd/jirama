@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CompteurController;
 use App\Http\Controllers\EauReleveController;
+use App\Http\Controllers\ElecReleveController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,13 +31,21 @@ Route::put("/clients/compteurs/edit/{compteur}", [CompteurController::class, "up
 
 
 // RELEVE EAU
-Route::get("/releves", [EauReleveController::class, "listEauReleve"])->name("releve.list");
+Route::get("/releves-eau", [EauReleveController::class, "listEauReleve"])->name("releve.list");
 Route::get("/clients/compteurs/{compteur}/releve/new", [EauReleveController::class, "addRelevePage"])->name("releve.new");
-Route::post("/clients/compteurs/{compteur}/releve/new", [EauReleveController::class, "newReleve"])->name("releve.new.store");
+Route::post("/clients/compteurs-eau/{compteur}/releve/new", [EauReleveController::class, "newReleve"])->name("releve.new.store");
 Route::delete("/releve/{eauReleve}", [EauReleveController::class, "destroy"])->name("releve.delete");
-Route::get("/releve/{eauReleve}/update", [EauReleveController::class, "edit"])->name("releve.edit");
-Route::put("/releve/{eauReleve}/update", [EauReleveController::class, "update"])->name("releve.update");
+Route::get("/releve-eau/{eauReleve}/update", [EauReleveController::class, "edit"])->name("releve.edit");
+Route::put("/releve-eau/{eauReleve}/update", [EauReleveController::class, "update"])->name("releve.update");
 
+
+// RALEVE ELEC
+Route::get("/relevelec", [ElecReleveController::class, "listElecReleve"])->name("relevelec.list");
+Route::get("/clients/compteurs-elec/{compteur}/releve/new", [ElecReleveController::class, "addRelevePage"])->name("relevelec.new");
+Route::post("/clients/compteurs-elec/{compteur}/releve/new", [ElecReleveController::class, "newReleve"])->name("relevelec.new.store");
+Route::delete("/releve/{elecReleve}", [ElecReleveController::class, "destroy"])->name("relevelec.delete");
+Route::get("/releve-electricite/{elecReleve}/update", [ElecReleveController::class, "edit"])->name("relevelec.edit");
+Route::put("/releve-electricite/{elecReleve}/update", [ElecReleveController::class, "update"])->name("relevelec.update");
 
 
 

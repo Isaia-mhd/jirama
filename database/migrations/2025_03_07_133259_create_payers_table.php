@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payers', function (Blueprint $table) {
             $table->id();
             $table->string("ref");
-            $table->foreignId("user_id");
+            $table->foreignId("user_id")->constrained()->cascadeOnDelete();
             $table->date("date_payment");
             $table->integer("montant");
             $table->timestamps();

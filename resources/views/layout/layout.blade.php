@@ -26,14 +26,18 @@
             <nav>
                 <ul class="flex items-center justify-between gap-6 text-sm md:text-base font-normal">
                     <li><a href="{{ route('home') }}"
-                            class="hover:text-amber-400 text-white transition duration-150 ease-in-out">Home</a>
+                            class="text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Home</a>
                     </li>
                     <li><a href="{{ route("clients") }}"
-                            class="hover:text-amber-400 text-white transition duration-150 ease-in-out">Clients</a>
+                            class="text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Clients</a>
                     </li>
 
                     <li><a href="{{ route("releve.list") }}"
-                            class=" text-white transition duration-150 ease-in-out bg-blue-500 py-[5px] px-4 !rounded-md hover:bg-blue-700">Relevés d'Eau</a>
+                            class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Relevés d'Eau</a>
+                    </li>
+
+                    <li><a href="{{ route("relevelec.list") }}"
+                            class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Relevés d'Electricité</a>
                     </li>
 
                 </ul>
@@ -50,7 +54,7 @@
 
     {{-- FOOTER --}}
     <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-6">
-        <p class="text-white font-light text-sm ">copyright&copy; {{ date('Y') }} Developped by Isaia Mohamed
+        <p class="text-white font-light text-sm ">copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
         </p>
     </footer>
 

@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ElecReleve extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         "compteur_id",
         "valeur",
@@ -15,4 +17,9 @@ class ElecReleve extends Model
         "date_presentation",
         "date_limite"
     ];
+
+    public function compteur(): BelongsTo
+    {
+        return $this->belongsTo(Compteur::class, "compteur_id");
+    }
 }

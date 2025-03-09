@@ -26,4 +26,11 @@ class Compteur extends Model
     {
         return $this->hasMany(EauReleve::class);
     }
+
+    public function elecReleve(): HasMany
+    {
+        return $this->hasMany(ElecReleve::class);
+    }
+
+
 }

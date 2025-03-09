@@ -68,7 +68,7 @@
 
                                 {{-- new releve --}}
                                 <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a
-                                        href="{{ route('releve.new', $elec->code_compteur) }}"
+                                        href="{{ route('relevelec.new', $elec->code_compteur) }}"
                                         class="bg-blue-500 py-1 px-2 rounded-sm text-white">Nouveau Releve</a></td>
 
 
