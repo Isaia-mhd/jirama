@@ -10,7 +10,7 @@ class EauReleveController extends Controller
     public function listEauReleve()
     {
         $releves = EauReleve::orderBy("created_at", "DESC")->get();
-
+       
         return view("EauReleve.list", compact("releves"));
     }
     public function addRelevePage($compteur)

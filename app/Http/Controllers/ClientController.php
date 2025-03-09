@@ -50,6 +50,7 @@ class ClientController extends Controller
         $day = Carbon::now()->day;
         $minute = Carbon::now()->minute;
         $sec = Carbon::now()->second;
+        
         $ref = $year.$month.$day.$minute.$sec;
 
         User::create([

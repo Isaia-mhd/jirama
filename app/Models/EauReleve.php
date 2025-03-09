@@ -20,6 +20,6 @@ class EauReleve extends Model
 
     public function compteur(): BelongsTo
     {
-        return $this->belongsTo(Compteur::class);
+        return $this->belongsTo(Compteur::class, "compteur_id");
     }
 }
