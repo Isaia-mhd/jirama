@@ -24,7 +24,7 @@ Liste de Releve
                         <th>Deleting</th>
                     </tr>
 
-                    
+
 
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@ Liste de Releve
                         <tr class="text-center text-sm shadow-lg">
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->compteur->client->nom }} </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->compteur->code_compteur }} </td>
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->valeur }} m<sup>3</sup></td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->valeur }} KWh</sup></td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_releve }} </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->date_presentation }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->date_limite }}</td>
