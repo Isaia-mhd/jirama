@@ -43,6 +43,26 @@
                 </ul>
             </nav>
 
+            <div class="">
+                <form action="{{ route("client.quartier") }}" method="post" id="myForm">
+                    @csrf
+                    <select id="quartier" name="catQuartier" class="w-[150px] rounded-md py-1 px-3 bg-slate-800 text-white">
+                    
+                        @foreach ($clientQuartiers as $quartier)
+                            <option value="{{ $quartier->quartier }}">{{ $quartier->quartier }}</option>
+                        @endforeach
+                        
+                    </select>
+                </form>
+            </div>
+
+            <div class="">
+                <form action="{{ route("client.search") }}" method="post">
+                    @csrf
+                    <input type="search" name="search" placeholder="Rechercher client..." class="py-1 px-3 bg-slate-800 rounded-md text-white">
+                    <button type="submit" class="bg-blue-700 text-white font-semibold py-1 px-3">Chercher</button>
+                </form>
+            </div>
 
         </div>
     </header>
@@ -54,9 +74,17 @@
 
     {{-- FOOTER --}}
     <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-6">
-        <p class="text-white font-light text-sm ">copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
+        <p class="text-white font-light text-sm  ">copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
         </p>
     </footer>
+
+
+
+    <script>
+        document.getElementById("quartier").addEventListener('change', function () {
+            document.getElementById("myForm").submit();
+        });
+    </script>
 
 </body>
 

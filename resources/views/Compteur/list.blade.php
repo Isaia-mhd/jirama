@@ -15,6 +15,11 @@
 
 
         <div class="text-white">
+            <div class="w-full flex justify-end">
+                {{-- Relevé --}}
+                {{-- <a href="" class="bg-slate-800 px-4 py-1 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Releve PDF</a> --}}
+                            
+            </div>
             <p>
                 @include('notify.success')
             </p>
@@ -127,8 +132,8 @@
                                 </td>
 
                                 {{-- new releve --}}
-                                <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a
-                                        href="{{ route('releve.new', $eau->code_compteur) }}"
+                                <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">
+                                    <a href="{{ route('releve.new', $eau->code_compteur) }}"
                                         class="bg-blue-500 py-1 px-2 rounded-sm text-white">Nouveau Releve</a></td>
 
 

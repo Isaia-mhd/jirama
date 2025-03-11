@@ -7,8 +7,6 @@ use App\Models\Quartier;
 use App\Models\Sexe;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
-
 class ClientController extends Controller
 {
 
@@ -112,5 +110,25 @@ class ClientController extends Controller
         ]);
 
         return redirect()->route("clients")->with("success", "Mis à jour avec succès !");
+    }
+
+
+    public function search(){
+        if(request()->has("search")){
+            $clients = User::where("nom", "like", "%". request("search") . "%")
+            ->orWhere("quartier", "like", "%". request("search") . "%")
+            ->orWhere("sexe", "like", "%". request("search") . "%")
+            ->orWhere("niveau", "like", "%". request("search") . "%")->get();
+
+            return view("Client.search", compact("clients"));
+        }
+    }
+
+    public function quartier(){
+        $quartier = request()->get("catQuartier");
+
+        $clients = User::where("quartier", $quartier)->get();
+
+        return view("Client.quartier", compact("clients"));
     }
 }
