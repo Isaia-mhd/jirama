@@ -59,6 +59,7 @@
                             </td>
 
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("clients.compteurs", $client->id) }}" class="bg-blue-500 py-1 px-2 rounded-sm text-white">Compteur</a></td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("releve.pdf", $client->id) }}" class="bg-slate-900 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i></a></td>
 
                             {{-- Relevé --}}
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("releve.pdf", $client->id) }}" class=" py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i></a></td>

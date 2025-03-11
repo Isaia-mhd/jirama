@@ -27,7 +27,7 @@
             <div class="w-full flex gap-4">
                 {{-- Valeur --}}
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="val" class="text-sm text-white font-semibold">Valeur(m<sup>3</sup>)</label>
+                    <label for="val" class="text-sm text-white font-semibold">Valeur (m<sup>3</sup>)</label>
                     <input class="bg-slate-900 text-white border-[1px] border-gray-500 py-2 px-2 outline-2 focus:outline focus:outline-blue-700"
                         type="int" min="1" name="valeur" id="val" placeholder="Valeur en m3">
                     @error('valeur')

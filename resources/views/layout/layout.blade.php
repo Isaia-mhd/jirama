@@ -69,12 +69,18 @@
 
     {{-- CONTENT --}}
     <section>
-        @yield('content')
+       <div class="pt-6 pb-6">
+            @yield('content')
+       </div>
     </section>
 
     {{-- FOOTER --}}
     <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-6">
+<<<<<<< HEAD
         <p class="text-white font-light text-sm  ">copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
+=======
+        <p class="text-white font-light text-sm ">copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario
+>>>>>>> 26a20a6578a7eb0491b1b697878ca6904fe1dc54
         </p>
     </footer>
 

@@ -7,7 +7,10 @@ use App\Models\EauReleve;
 use App\Models\ElecReleve;
 use App\Models\Releve;
 use App\Models\User;
+<<<<<<< HEAD
 use Barryvdh\DomPDF\Facade\Pdf;
+=======
+>>>>>>> 26a20a6578a7eb0491b1b697878ca6904fe1dc54
 
 class RelevePdfController extends Controller
 {
@@ -42,6 +45,7 @@ class RelevePdfController extends Controller
                            (($ELEC->compteur->pu ?? 0) * ($ELEC->valeur ?? 0))
         ]);
 
+<<<<<<< HEAD
       
         return view("Facture.pdf", compact("releve"));
 
@@ -51,5 +55,11 @@ class RelevePdfController extends Controller
     //     $pdf = Pdf::loadView("Facture.pdf");
     //     return $pdf;
     // }
+=======
+
+        // dd($releve);
+        return view("Facture.pdf", compact("releve"));
+    }
+>>>>>>> 26a20a6578a7eb0491b1b697878ca6904fe1dc54
 }
 
