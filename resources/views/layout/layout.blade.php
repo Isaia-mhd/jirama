@@ -47,7 +47,7 @@
                 <form action="{{ route("client.quartier") }}" method="post" id="myForm">
                     @csrf
                     <select id="quartier" name="catQuartier" class="w-[150px] rounded-md py-1 px-3 bg-slate-800 text-white">
-                    
+                        <option value="">Quartier</option>
                         @foreach ($clientQuartiers as $quartier)
                             <option value="{{ $quartier->quartier }}">{{ $quartier->quartier }}</option>
                         @endforeach
@@ -69,9 +69,7 @@
 
     {{-- CONTENT --}}
     <section>
-       <div class="pt-6 pb-6">
-            @yield('content')
-       </div>
+        @yield('content')
     </section>
 
     {{-- FOOTER --}}
