@@ -7,10 +7,7 @@ use App\Models\EauReleve;
 use App\Models\ElecReleve;
 use App\Models\Releve;
 use App\Models\User;
-<<<<<<< HEAD
-use Barryvdh\DomPDF\Facade\Pdf;
-=======
->>>>>>> 26a20a6578a7eb0491b1b697878ca6904fe1dc54
+
 
 class RelevePdfController extends Controller
 {
