@@ -74,7 +74,7 @@
 
     {{-- FOOTER --}}
     <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-6">
-        <p class="text-white font-light text-sm  ">copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
+        <p class="text-white font-light text-sm  ">Copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
         </p>
     </footer>
 

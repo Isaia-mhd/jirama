@@ -4,11 +4,11 @@
 @endsection
 
 @section("content")
-<<<<<<< HEAD
+
     <div class="text-white w-full max-w-[70%] mx-auto pb-[70px]">
-=======
+
     <div class="text-white w-full max-w-[70%] mx-auto">
->>>>>>> 26a20a6578a7eb0491b1b697878ca6904fe1dc54
+
         <h1 class="text-center text-3xl uppercase">jiro sy rano malagasy</h1>
         <p class="text-center capitalize mt-4 pb-8">votre facture du mois de : {{ \Carbon\Carbon::parse($releve->date_releve )->format("F") }} </p>
         <div class="w-full flex justify-between">

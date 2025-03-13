@@ -51,4 +51,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Compteur::class);
     }
+
+    public function releve(){
+        return $this->hasMany(Releve::class);
+    }
 }

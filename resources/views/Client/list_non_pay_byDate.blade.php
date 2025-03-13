@@ -6,17 +6,24 @@
     <div class="w-full max-w-[90%]  mx-auto">
 
         <div class="w-full">
-            <h1 class="text-center text-white text-2xl font-semibold mb-6">Liste de client </h1>
+            <h1 class="text-center text-white text-2xl font-semibold mb-6">Liste des clients Qui n'ont pas payé </h1>
         </div>
 
-        <div class="w-full flex justify-end mb-6 gap-3">
-            <a href="{{ route('clients.add') }}" class="bg-blue-500 py-1 px-2 text-white rounded-sm">Ajouter Nouveau</a>
-            <a href="{{ route('list.client.nonpaye') }}" class="bg-red-500 py-1 px-2 text-white rounded-sm">Les Relevés Non Payé</a>
-        </div>
+
         <div class="text-white">
+            {{-- notification --}}
             <p>
                 @include('notify.success')
             </p>
+
+            {{-- filter by date --}}
+            <div class="">
+                <form action="{{ route("list.client.nonpaye.byDate") }}" method="post" id="myForm">
+                    @csrf
+                    <input type="date" name="dateLimite" value="{{ request()->get("dateLimite", "") }}" class="w-[170px] rounded-md py-1 px-3 bg-slate-800 text-white">
+                    <button type="submit" class="bg-blue-500 text-white py-1 px-4">Filtrer</button>
+                </form>
+            </div>
             <table class="w-full  rounded-tr-xl rounded-tl-xl table-auto border-collapse">
                 <thead>
                     <tr class="text-sm text-gray-500 ">
@@ -28,6 +35,8 @@
                         <th>Email</th>
                         <th>Editing</th>
                         <th>Deleting</th>
+                        {{-- <th>Compteur</th> --}}
+                        {{-- <th>Relevé</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +66,10 @@
                                 </form>
                             </td>
 
+                            
+                            {{-- <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("releve.pdf", $client->id) }}" class="bg-slate-900 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i></a></td> --}}
+
+                            
 
                         </tr>
                     @endforeach

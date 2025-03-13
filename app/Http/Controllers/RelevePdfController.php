@@ -27,6 +27,7 @@ class RelevePdfController extends Controller
             "date_releve" => $EAU != null ? $EAU->date_releve : ($ELEC != null ? $ELEC->date_releve : null),
             "date_presentation" => $EAU != null ? $EAU->date_presentation : ($ELEC != null ? $ELEC->date_presentation : null),
             "date_limite" => $EAU != null ? $EAU->date_limite : ($ELEC != null ? $ELEC->date_limite : null),
+            "user_id" => $client->id,
             "titulaire" => $client->nom,
             "ref_client" => $client->reference,
             "adresse" => $client->quartier,
@@ -41,22 +42,10 @@ class RelevePdfController extends Controller
             "net_payer" => (($EAU->compteur->pu ?? 0) * ($EAU->valeur ?? 0)) +
                            (($ELEC->compteur->pu ?? 0) * ($ELEC->valeur ?? 0))
         ]);
-
-<<<<<<< HEAD
-      
-        return view("Facture.pdf", compact("releve"));
-
-    }
-
-    // public function generePdf(){
-    //     $pdf = Pdf::loadView("Facture.pdf");
-    //     return $pdf;
-    // }
-=======
-
-        // dd($releve);
+        
         return view("Facture.pdf", compact("releve"));
     }
->>>>>>> 26a20a6578a7eb0491b1b697878ca6904fe1dc54
+
+    
+
 }
-
