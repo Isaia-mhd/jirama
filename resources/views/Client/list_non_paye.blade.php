@@ -8,7 +8,7 @@
         <div class="w-full">
             <h1 class="text-center text-white text-2xl font-semibold mb-6">Liste des clients Qui n'ont pas payé </h1>
         </div>
-
+            
 
         <div class="text-white">
             {{-- notification --}}
@@ -48,6 +48,7 @@
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $client->niveau }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $client->email }}</td>
 
+                            
                             {{-- editing --}}
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">
                                 <a href="{{ route('clients.edit', $client->id) }}"><i

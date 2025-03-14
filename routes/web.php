@@ -15,15 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $status = "Non Payé";
-       
-    $clients = User::whereHas("releve", function ($query) use ($status){
-        $query->where("status", $status);
+    $mail_sent = false;
+    $clients = User::whereHas("releve", function ($query) use ($status, $mail_sent){
+        $query->where("status", $status)->where("email_sent", $mail_sent);
     })->get();
 
     foreach ($clients as $client) {
         foreach ($client->releve as $releve) {
+            // dump($releve->date_limite);
+            // dump($client->email);
+
             if($releve->date_limite == date("Y-m-d")){
-                Mail::to($client->email)->send(new SendMail($client));      
+                Mail::to($client->email)->send(new SendMail($client));
+                $releve->update([
+                    "email_sent" => true
+                ]);
             }
         }
     }
@@ -82,10 +88,6 @@ Route::get("/releve-electricite/{elecReleve}/update", [ElecReleveController::cla
 Route::put("/releve-electricite/{elecReleve}/update", [ElecReleveController::class, "update"])->name("relevelec.update");
 
 // GENERER PDF DE RELEVE
-
-Route::get("clients/{client}/releves/pdf", [RelevePdfController::class, "showPdf"])->name("releve.pdf");
-
-Route::get("clients/{client}/releves/pdf", [RelevePdfController::class, "showPdf"])->name("releve.pdf");
+Route::post("clients/{client}/releves/pdf", [RelevePdfController::class, "showPdf"])->name("releve.pdf");
 
 
- 

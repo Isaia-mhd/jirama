@@ -13,6 +13,8 @@
             <a href="{{ route('clients.add') }}" class="bg-blue-500 py-1 px-2 text-white rounded-sm">Ajouter Nouveau</a>
             <a href="{{ route('list.client.nonpaye') }}" class="bg-red-500 py-1 px-2 text-white rounded-sm">Les Relevés Non Payé</a>
         </div>
+
+        
         <div class="text-white">
             <p>
                 @include('notify.success')
@@ -58,11 +60,7 @@
                                         <i class="fa-solid fa-trash text-red-500 text-md"></i></button>
                                 </form>
                             </td>
-
-                            
                             {{-- <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("releve.pdf", $client->id) }}" class="bg-slate-900 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i></a></td> --}}
-
-                            
 
                         </tr>
                     @endforeach
@@ -73,8 +71,6 @@
                     <p class="text-gray-400 text-center mt-6">Aucun Client</p>
             @endif
             {{-- <div class="w-full max-w-[90%] mx-auto mt-3">{{ $baskets->links('pagination::tailwind') }}</div> --}}
-
-
         </div>
 
     </div>
