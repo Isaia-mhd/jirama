@@ -57,12 +57,7 @@
             </div>
         </div>
 
-        {{-- Relevé --}}
-        <form action="{{ route("releve.pdf", $client->id) }}" method="post" class="flex gap-2">
-            @csrf
-            <input type="date" name="date_rel">
-            <button type="submit" class="text-white py-1 px-3 bg-green-600">Telecharger Relevé</button>
-        </form>
+       
         {{-- <a href="{{ route("releve.pdf", $client->id) }}" class="bg-slate-800 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Telecharger Relevé</a> --}}
                             
     </section>

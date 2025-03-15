@@ -35,7 +35,7 @@
                 <tbody>
                     @foreach ($releves as $releve)
                         <tr class="text-center text-sm shadow-lg">
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ \Carbon\Carbon::parse($releve->date_releve )->format("F") }}
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_releve }} ({{ \Carbon\Carbon::parse($releve->date_releve )->format("F") }})
                             </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_presentation }} </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->date_limite }}</td>
@@ -75,6 +75,14 @@
 
 
         </div>
+
+          {{-- Relevé --}}
+          <form action="{{ route("releve.pdf", $client->id) }}" method="post" class="flex gap-2 mt-6">
+            @csrf
+            <input type="date" name="date_rel" value="{{ request()->get("date_rel", "") }}">
+            <button type="submit" class="text-white py-1 px-3 bg-green-600">Telecharger Relevé</button>
+        </form>
+
 
     </div>
 @endsection

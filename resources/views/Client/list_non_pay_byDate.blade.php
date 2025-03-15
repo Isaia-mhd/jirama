@@ -44,7 +44,7 @@
                         <tr class="text-center text-sm shadow-lg">
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $client->reference }}
                             </td>
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("client.profile", $client->id) }}">{{ $client->nom }}</a></td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("client.profile", $client->id) }}" class="text-blue-500 underline">{{ $client->nom }}</a></td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $client->sexe }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $client->quartier }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $client->niveau }}</td>

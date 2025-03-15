@@ -27,7 +27,7 @@ class ProfileController extends Controller
 
     public function payement(User $client){
 
-        $releves = Releve::where("ref_client", $client->reference)->paginate("10");
+        $releves = Releve::orderBy("created_at", "DESC")->where("ref_client", $client->reference)->paginate("10");
         return view("Releve.payment", compact("releves", "client"));
     }
 

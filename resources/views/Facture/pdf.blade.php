@@ -20,7 +20,7 @@
     <div>
 
         <h1>jiro sy rano malagasy</h1>
-        <p class="date_releve">votre facture du mois de : {{ \Carbon\Carbon::parse($releve->date_releve )->format("F") }} </p>
+        <p class="date_releve">votre facture du mois de : {{ \Carbon\Carbon::parse($releve->date_releve )->format("F Y") }} </p>
         <div class="info">
             <table class="tabInfo">
                 <tr>
