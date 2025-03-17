@@ -19,7 +19,7 @@
         <div class="flex items-center h-14 justify-between w-full max-w-[90%] mx-auto">
             <div class="">
 
-                <h1 href="" class="text-2xl text-amber-400">{{ config('app.name') }}</h1>
+                <h1 href="" class="text-4xl font-bold text-blue-700">{{ config('app.name') }}</h1>
 
             </div>
 
@@ -40,6 +40,10 @@
                             class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Relevés d'Electricité</a>
                     </li>
 
+                    <li><a href="{{ route("paiement") }}"
+                        class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Payés</a>
+                </li>
+
                 </ul>
             </nav>
 
@@ -51,18 +55,12 @@
                         @foreach ($clientQuartiers as $quartier)
                             <option value="{{ $quartier->quartier }}">{{ $quartier->quartier }}</option>
                         @endforeach
-                        
+
                     </select>
                 </form>
             </div>
 
-            <div class="">
-                <form action="{{ route("client.search") }}" method="post">
-                    @csrf
-                    <input type="search" name="search" placeholder="Rechercher client..." class="py-1 px-3 bg-slate-800 rounded-md text-white">
-                    <button type="submit" class="bg-blue-700 text-white font-semibold py-1 px-3">Chercher</button>
-                </form>
-            </div>
+           @include("layout.search_bar")
 
         </div>
     </header>
@@ -74,7 +72,7 @@
 
     {{-- FOOTER --}}
     {{-- <footer class="w-full h-[50px] bg-blue-950 flex justify-center items-center mt-6">
-        <p class="text-white font-light text-sm  ">Copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario 
+        <p class="text-white font-light text-sm  ">Copyright&copy; {{ date('Y') }} Colaborated by Mohamed and Mario
         </p>
     </footer> --}}
 

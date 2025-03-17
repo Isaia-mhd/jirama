@@ -37,7 +37,7 @@
                     <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("clients.compteurs", $client->id) }}" class="w-full block bg-blue-600 hover:bg-blue-800 transition duration-200 py-1 px-2 rounded-sm text-white text-center">Voir plus</a></td>
                 </div>
             </div>
-        
+
             {{-- Historique de relevé --}}
             <div class="text-white">
                 <p class="text-slate-500">Historiqu de relevé:</p>
@@ -51,14 +51,14 @@
                     @endforeach
                 </div>
 
-                {{-- PAYER BTN --}}
-                <a href="{{ route("releve.payer", $client->id) }}" class="bg-slate-800 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Paiement De relevé</a>
-          
+                {{--  Historique de relevé details --}}
+                <a href="{{ route("releve.payer", $client->id) }}" class="bg-slate-800 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Paiement De Relevé</a>
+
             </div>
         </div>
 
-       
+
         {{-- <a href="{{ route("releve.pdf", $client->id) }}" class="bg-slate-800 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Telecharger Relevé</a> --}}
-                            
+
     </section>
 @endsection

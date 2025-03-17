@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CompteurController;
 use App\Http\Controllers\EauReleveController;
 use App\Http\Controllers\ElecReleveController;
+use App\Http\Controllers\PayerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RelevePdfController;
 use App\Mail\SendMail;
@@ -90,4 +91,8 @@ Route::put("/releve-electricite/{elecReleve}/update", [ElecReleveController::cla
 // GENERER PDF DE RELEVE
 Route::post("clients/{client}/releves/pdf", [RelevePdfController::class, "showPdf"])->name("releve.pdf");
 
+
+// PAYER
+Route::get("paiements", [PayerController::class, "listPaid"])->name("paiement");
+Route::delete("paiements/{payment}/delete", [PayerController::class, "destroy"])->name("paiement.destroy");
 

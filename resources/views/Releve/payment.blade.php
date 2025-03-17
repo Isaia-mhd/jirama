@@ -9,9 +9,6 @@
             <h1 class="text-center text-white text-2xl font-semibold mb-6">Historique de Relevé  </h1>
         </div>
 
-        <div class="w-full flex justify-end mb-6">
-            <a href="{{ route('clients.add') }}" class="bg-blue-500 py-1 px-2 text-white rounded-sm">Ajouter Nouveau</a>
-        </div>
         <div class="text-white">
             <p>
                 @include('notify.success')
@@ -29,7 +26,7 @@
                         <th>Net à Payer</th>
                         <th>Status</th>
                         <th>Paiement</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +40,7 @@
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->total_eau }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->compteur_elec }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->total_elec }}</td>
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->net_payer }}</td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ number_format($releve->net_payer, 0, ",", ".") }} ar</td>
 
 
                             {{-- status --}}
@@ -59,9 +56,9 @@
                                     <a href="{{ route('releve.paiement', $releve->id) }}" class="bg-green-700 py-1 px-4 rounded-md"><i
                                     class="fa-solid fa-state text-green-500 text-md"></i>Payer</a>
                                 @endif
-                                
+
                             </td>
-                           
+
 
                         </tr>
                     @endforeach
@@ -85,4 +82,6 @@
 
 
     </div>
+
+
 @endsection
