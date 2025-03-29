@@ -20,17 +20,17 @@ Liste de Releve
                         <th>Date de Releve</th>
                         <th>Date de Presentation</th>
                         <th>Date Limite de Paiement</th>
-                        <th>Editing</th>
-                        <th>Deleting</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
                     </tr>
 
-                    
+
 
                 </thead>
                 <tbody>
                     @foreach ($releves as $releve)
                         <tr class="text-center text-sm shadow-lg">
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->compteur->client->nom }} </td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> <a href="{{ route("client.profile", $releve->compteur->client->id) }}" class="text-blue-500 underline">{{ $releve->compteur->client->nom }}</a> </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->compteur->code_compteur }} </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->valeur }} m<sup>3</sup></td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_releve }} </td>

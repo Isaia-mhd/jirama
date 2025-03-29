@@ -14,7 +14,7 @@
             <a href="{{ route('list.client.nonpaye') }}" class="bg-red-500 py-1 px-2 text-white rounded-sm">Les Relevés Non Payé</a>
         </div>
 
-        
+
         <div class="text-white">
             <p>
                 @include('notify.success')
@@ -28,8 +28,8 @@
                         <th>Quartier</th>
                         <th>Niveau</th>
                         <th>Email</th>
-                        <th>Editing</th>
-                        <th>Deleting</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
                         {{-- <th>Compteur</th> --}}
                         {{-- <th>Relevé</th> --}}
                     </tr>

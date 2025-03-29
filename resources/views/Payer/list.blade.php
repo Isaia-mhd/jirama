@@ -22,7 +22,7 @@ Payés
                         <th>Client</th>
                         <th>Date de Paiement</th>
                         <th>Montant</th>
-                        <th>Delete</th>
+                        <th>Suppression</th>
 
                     </tr>
                 </thead>
@@ -31,7 +31,7 @@ Payés
                         <tr class="text-center text-sm shadow-lg">
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $pay->ref }}
                             </td>
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $pay->client }} </td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $pay->client }} </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $pay->date_payment }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">
                                 {{ number_format($pay->montant, 0, ",", ".") }} Ariary
@@ -44,7 +44,7 @@ Payés
                                 <form action="{{ route("paiement.destroy", $pay->id) }}" method="post">
                                     @csrf
                                     @method("delete")
-                                    <button type="submit">Supprimer</button>
+                                    <button type="submit" class="text-red-500">Supprimer</button>
                                 </form>
                             </td>
 

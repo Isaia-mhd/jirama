@@ -74,9 +74,12 @@
         </div>
 
           {{-- Relevé --}}
-          <form action="{{ route("releve.pdf", $client->id) }}" method="post" class="flex gap-2 mt-6">
+          <form action="{{ route("releve.pdf", $client->id) }}" method="post" class=" mt-6">
             @csrf
-            <input type="date" name="date_rel" value="{{ request()->get("date_rel", "") }}">
+            <div class="flex flex-col gap-2">
+                <label for="date" class="text-slate-500 font-semibold">Date du Rélevé Correct:</label>
+                <input type="date" name="date_rel" id="date" class="w-[250px] mb-2" value="{{ request()->get("date_rel", "") }}">
+            </div>
             <button type="submit" class="text-white py-1 px-3 bg-green-600">Telecharger Relevé</button>
         </form>
 

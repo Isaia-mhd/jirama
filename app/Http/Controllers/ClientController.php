@@ -50,7 +50,7 @@ class ClientController extends Controller
         $day = Carbon::now()->day;
         $minute = Carbon::now()->minute;
         $sec = Carbon::now()->second;
-        
+
         $ref = $year.$month.$day.$minute.$sec;
 
         User::create([
@@ -60,7 +60,7 @@ class ClientController extends Controller
             "quartier" => $validated["quartier"],
             "niveau" => $validated["niveau"],
             "email" => $validated["email"]
-        ]); 
+        ]);
 
         return redirect()->route("clients")->with("success", "Nouveau Client Ajouté !");
     }
@@ -136,7 +136,7 @@ class ClientController extends Controller
     public function listNonPaye(){
 
         $status = "Non Payé";
-       
+
         $clients = User::whereHas("releve", function ($query) use ($status){
             $query->where("status", $status);
         })->get();

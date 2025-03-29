@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +14,10 @@
         .details{text-align: center; text-transform: capitalize; padding-bottom: 10px;}
         .table{width: 500px;margin: auto;border: 1px gray;text-align: center;}
         .tabInfo{width: 100%; margin: auto;}
-       
+
     </style>
 </head>
-<body>
+<body class="!bg-white">
     <div>
 
         <h1>jiro sy rano malagasy</h1>
@@ -81,6 +82,6 @@
 </html>
 
 
-  
-    
+
+
 

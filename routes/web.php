@@ -7,6 +7,7 @@ use App\Http\Controllers\ElecReleveController;
 use App\Http\Controllers\PayerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RelevePdfController;
+use App\Jobs\SendMailForNotPaid;
 use App\Mail\SendMail;
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -15,26 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    $status = "Non Payé";
-    $mail_sent = false;
-    $clients = User::whereHas("releve", function ($query) use ($status, $mail_sent){
-        $query->where("status", $status)->where("email_sent", $mail_sent);
-    })->get();
 
-    foreach ($clients as $client) {
-        foreach ($client->releve as $releve) {
-            // dump($releve->date_limite);
-            // dump($client->email);
-
-            if($releve->date_limite == date("Y-m-d")){
-                Mail::to($client->email)->send(new SendMail($client));
-                $releve->update([
-                    "email_sent" => true
-                ]);
-            }
-        }
-    }
-
+    SendMailForNotPaid::dispatch();
     return view('Home');
 })->name("home");
 
