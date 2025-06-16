@@ -73,6 +73,7 @@ Route::put("/releve-electricite/{elecReleve}/update", [ElecReleveController::cla
 
 // GENERER PDF DE RELEVE
 Route::post("clients/{client}/releves/pdf", [RelevePdfController::class, "showPdf"])->name("releve.pdf");
+Route::get("clients/releve/telecharge/{releve}", [RelevePdfController::class, "download"])->name("download.pdf");
 
 
 // PAYER

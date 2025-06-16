@@ -6,7 +6,7 @@
     <div class="w-full max-w-[90%]  mx-auto">
 
         <div class="w-full">
-            <h1 class="text-center text-white text-2xl font-semibold mb-6">Historique de Relevé  </h1>
+            <h1 class="text-center text-white text-2xl font-semibold mb-6">Historique de Facture  </h1>
         </div>
 
         <div class="text-white">
@@ -32,13 +32,13 @@
                 <tbody>
                     @foreach ($releves as $releve)
                         <tr class="text-center text-sm shadow-lg">
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_releve }} ({{ \Carbon\Carbon::parse($releve->date_releve )->format("F") }})
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_releve }} ({{ \Carbon\Carbon::parse($releve->date_releve)->locale('fr')->translatedFormat('F') }})
                             </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"> {{ $releve->date_presentation }} </td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->date_limite }}</td>
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->compteur_eau }}</td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->compteur_eau ? $releve->compteur_eau : "Aucun"}}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->total_eau }}</td>
-                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->compteur_elec }}</td>
+                            <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->compteur_elec ? $releve->compteur_elec : "Aucun" }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ $releve->total_elec }}</td>
                             <td class="border py-2 border-y-4 border-x-0  border-y-slate-900">{{ number_format($releve->net_payer, 0, ",", ".") }} ar</td>
 
@@ -66,7 +66,7 @@
                 </tbody>
             </table>
             @if (count($releves) == 0)
-                    <p class="text-gray-400 text-center mt-6">Aucun Releve</p>
+                    <p class="text-gray-400 text-center mt-6">Aucun Facture</p>
             @endif
             {{-- <div class="w-full max-w-[90%] mx-auto mt-3">{{ $baskets->links('pagination::tailwind') }}</div> --}}
 
@@ -78,9 +78,9 @@
             @csrf
             <div class="flex flex-col gap-2">
                 <label for="date" class="text-slate-500 font-semibold">Date du Rélevé Correct:</label>
-                <input type="date" name="date_rel" id="date" class="w-[250px] mb-2" value="{{ request()->get("date_rel", "") }}">
+                <input type="date" name="date_rel" id="date" class="w-[250px] mb-2 bg-slate-950 text-white" value="{{ request()->get("date_rel", "") }}">
             </div>
-            <button type="submit" class="text-white py-1 px-3 bg-green-600">Telecharger Relevé</button>
+            <button type="submit" class="text-white py-1 px-3 bg-green-600">Visualiser Relevé</button>
         </form>
 
 

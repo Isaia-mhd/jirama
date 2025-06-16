@@ -30,8 +30,8 @@
                     <hr class="text-white  ">
                 </div>
 
-                <p>N° Compteur d'eau: {{ $compteurEau->code_compteur ?? "" }}</p>
-                <p>N° Compteur d'elec: {{ $compteurElec->code_compteur ?? ""}}</p>
+                <p>N° Compteur d'eau: <span class="text-amber-500">{{ $compteurEau->code_compteur ?? "Aucune"}}</span></p>
+                <p>N° Compteur d'elec: <span class="text-amber-500">{{ $compteurElec->code_compteur ?? "Aucune"}}</span></p>
 
                 <div class="mt-6">
                     <td class="border py-2 border-y-4 border-x-0  border-y-slate-900"><a href="{{ route("clients.compteurs", $client->id) }}" class="w-full block bg-blue-600 hover:bg-blue-800 transition duration-200 py-1 px-2 rounded-sm text-white text-center">Voir plus</a></td>
@@ -40,7 +40,7 @@
 
             {{-- Historique de relevé --}}
             <div class="text-white">
-                <p class="text-slate-500">Historiqu de relevé:</p>
+                <p class="text-slate-500">Les Factures:</p>
                 <div class="mb-4">
                     <hr class="text-white  ">
                 </div>
@@ -52,7 +52,7 @@
                 </div>
 
                 {{--  Historique de relevé details --}}
-                <a href="{{ route("releve.payer", $client->id) }}" class="bg-slate-800 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Paiement De Relevé</a>
+                <a href="{{ route("releve.payer", $client->id) }}" class="bg-slate-800 py-1 px-2 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Paiement De Facture</a>
 
             </div>
         </div>

@@ -1,4 +1,7 @@
 @extends('layout.layout')
+@section("title")
+    Nouveau client
+@endsection
 @section('content')
 
     {{-- Little Title --}}

@@ -7,7 +7,7 @@ use App\Models\EauReleve;
 use App\Models\ElecReleve;
 use App\Models\Releve;
 use App\Models\User;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class RelevePdfController extends Controller
 {
@@ -33,18 +33,18 @@ class RelevePdfController extends Controller
 
         // Telechager le relevé si deja existe
         if($releve != null){
-            
+
             return view("Facture.pdf", compact("releve"));
 
         } else{
-           
+
             // Si la date de relevé donné n'existe pas, Creer le d'abord
             if($EAU == null && $ELEC == null ){
-                
+
                 return redirect()->back()->with("success", "Créer Le Relevé De Ce Mois d'Abord");
 
             } else{
-                
+
                 $releve = Releve::create([
                     "date_releve" => $date_releve,
                     "date_presentation" => $EAU != null ? $EAU->date_presentation : ($ELEC != null ? $ELEC->date_presentation : null),
@@ -67,13 +67,22 @@ class RelevePdfController extends Controller
                 ]);
 
                 return view("Facture.pdf", compact("releve"));
-                
+
             }
 
         }
 
     }
 
-    
+    public function download(Releve $releve)
+    {
+        // dd($releve);
+
+         $pdf = Pdf::loadView('Facture.telecharge', ["releve" => $releve]);
+
+        return $pdf->download(str_replace(" ", "_", $releve->titulaire). "_facture_" . $releve->date_releve . '.pdf');
+    }
+
+
 
 }

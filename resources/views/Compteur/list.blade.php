@@ -18,7 +18,7 @@
             <div class="w-full flex justify-end">
                 {{-- Relevé --}}
                 {{-- <a href="" class="bg-slate-800 px-4 py-1 rounded-sm text-white"><i class="fa-solid fa-download text-green-700"></i> Releve PDF</a> --}}
-                            
+
             </div>
             <p>
                 @include('notify.success')
@@ -26,7 +26,7 @@
 
             {{-- COMPTEUR D'ELECTRICITE --}}
             <div class="w-full mt-12 mb-12">
-                <p class="text-blue-700 uppercase font-bold text-center mb-4">Compteurs d'Electricite</p>
+                <p class="text-blue-200 uppercase font-bold text-center mb-4">Compteurs d'Electricite</p>
                 <table class="w-full  rounded-tr-xl rounded-tl-xl table-auto border-collapse">
                     <thead>
                         <tr class="text-sm text-gray-500 ">
@@ -89,7 +89,7 @@
 
             {{-- COMPTEUR D'EAU --}}
             <div class="w-full mt-12 mb-6">
-                <p class="text-blue-700 uppercase font-bold text-center mb-4">Compteurs d'Eau</p>
+                <p class="text-blue-200 uppercase font-bold text-center mb-4">Compteurs d'Eau</p>
                 <table class="w-full  rounded-tr-xl rounded-tl-xl table-auto border-collapse">
                     <thead>
                         <tr class="text-sm text-gray-500 ">

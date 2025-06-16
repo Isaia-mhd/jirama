@@ -19,29 +19,29 @@
         <div class="flex items-center h-14 justify-between w-full max-w-[90%] mx-auto">
             <div class="">
 
-                <h1 href="" class="text-4xl font-bold text-blue-700">{{ config('app.name') }}</h1>
+                <h1 href="" class="text-4xl font-bold text-gray-200">{{ config('app.name') }}</h1>
 
             </div>
 
             <nav>
                 <ul class="flex items-center justify-between gap-6 text-sm md:text-base font-normal">
                     <li><a href="{{ route('home') }}"
-                            class="text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Home</a>
+                            class="text-white transition duration-150 ease-in-out border-2 border-white py-[5px] px-4 !rounded-md hover:border-amber-400 hover:text-white">Accueil</a>
                     </li>
                     <li><a href="{{ route("clients") }}"
-                            class="text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Clients</a>
+                            class="text-white transition duration-150 ease-in-out border-2 border-white py-[5px] px-4 !rounded-md hover:border-amber-400 hover:text-white">Clients</a>
                     </li>
 
                     <li><a href="{{ route("releve.list") }}"
-                            class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Relevés d'Eau</a>
+                            class=" text-white transition duration-150 ease-in-out border-2 border-white py-[5px] px-4 !rounded-md hover:border-amber-400 hover:text-white">Relevés d'Eau</a>
                     </li>
 
                     <li><a href="{{ route("relevelec.list") }}"
-                            class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Relevés d'Electricité</a>
+                            class=" text-white transition duration-150 ease-in-out border-2 border-white py-[5px] px-4 !rounded-md hover:border-amber-400 hover:text-white">Relevés d'Electricité</a>
                     </li>
 
                     <li><a href="{{ route("paiement") }}"
-                        class=" text-blue-700 transition duration-150 ease-in-out border-2 border-blue-800 py-[5px] px-4 !rounded-md hover:border-blue-700 hover:text-white">Payés</a>
+                        class=" text-white transition duration-150 ease-in-out border-2 border-white py-[5px] px-4 !rounded-md hover:border-amber-400 hover:text-white">Payés</a>
                 </li>
 
                 </ul>

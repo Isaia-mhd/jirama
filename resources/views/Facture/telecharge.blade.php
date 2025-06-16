@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Facture</title>
 
     <style>
         h1{text-align: center;font-size: 30px;text-transform: uppercase;}
-        .date_releve{text-align: center;text-transform: capitalize;margin-top: 20px;padding-bottom: 16px;}
+        .date_releve{text-align: center;margin-top: 20px;padding-bottom: 16px;}
         .info{width: 90%;display: flex;justify-content: space-around;}
-        .details{text-align: center; text-transform: capitalize; padding-bottom: 10px;}
+        .details{text-align: center; padding-bottom: 10px;}
         .table{width: 500px;margin: auto;border: 1px gray;text-align: center;}
         .tabInfo{width: 100%; margin: auto;}
 
@@ -21,8 +21,8 @@
     <div>
 
         <h1>jiro sy rano malagasy</h1>
-        <p class="date_releve">votre facture du mois de : {{ \Carbon\Carbon::parse($releve->date_releve)->locale('fr')->translatedFormat('F Y') }} </p>
-        <a href="{{ route("download.pdf", $releve) }}">Telecharger</a>
+        <p class="date_releve">Votre facture du mois de : {{ \Carbon\Carbon::parse($releve->date_releve)->locale('fr')->translatedFormat('F Y') }}
+ </p>
         <div class="info">
             <table class="tabInfo">
                 <tr>
@@ -40,10 +40,10 @@
                         </div>
                     </td>
                     <td>
-                         <div>
-                            <p style="position: relative; left: 150px;">Date de Presentation: {{ \Carbon\Carbon::parse($releve->date_presentation)->locale('fr')->translatedFormat('d F Y') }}
+                        <div>
+                            <p style="position: relative; left: 50px;">Date de Presentation: {{ \Carbon\Carbon::parse($releve->date_presentation)->locale('fr')->translatedFormat('d F Y') }}
 </p>
-                            <p style="padding-bottom: 110px; position: relative; left: 150px;">Date limite de paiement: {{ \Carbon\Carbon::parse($releve->date_limite)->locale('fr')->translatedFormat('d F Y') }}
+                            <p style="padding-bottom: 110px; position: relative; left: 50px;">Date limite de paiement: {{ \Carbon\Carbon::parse($releve->date_limite)->locale('fr')->translatedFormat('d F Y') }}
  </p>
                         </div>
                     </td>
